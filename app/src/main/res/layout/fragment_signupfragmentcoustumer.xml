@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Signupfragmentcoustumer">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnsignup"
+            android:layout_width="224dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="74dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirmpasswordsignuocoustumer" />
+
+        <EditText
+            android:id="@+id/passwordsignuocoustumer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="69dp"
+            android:ems="10"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/confirmpasswordsignuocoustumer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailsignuooustumer" />
+
+        <EditText
+            android:id="@+id/confirmpasswordsignuocoustumer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="193dp"
+            android:ems="10"
+            android:hint="confirm password"
+            android:inputType="numberPassword"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnsignup"
+            app:layout_constraintStart_toStartOf="@+id/passwordsignuocoustumer"
+            app:layout_constraintTop_toBottomOf="@+id/passwordsignuocoustumer" />
+
+        <EditText
+            android:id="@+id/emailsignuooustumer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="126dp"
+            android:layout_marginBottom="63dp"
+            android:ems="10"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/passwordsignuocoustumer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
