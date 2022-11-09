@@ -48,7 +48,7 @@ public class Loginfragmentcoustumer extends Fragment {
         // Required empty public constructor
     }
     public void initialize() {
-        etusername = getView().findViewById(R.id.username);
+        etusername = getView().findViewById(R.id.emailadresslogincoustumer);
         etpassword = getView().findViewById(R.id.password);
         etbtnlogin = getView().findViewById(R.id.loginbt);
         /*etimageView = getView().findViewById(R.id.loginimage);
@@ -59,7 +59,7 @@ public class Loginfragmentcoustumer extends Fragment {
             public void onClick(View view) {
                 forgotpasswordfragment forgotpasswordfragment=new forgotpasswordfragment();
                 FragmentManager manager=getFragmentManager();
-                manager.beginTransaction().replace(R.id.frameLayoutMAIN,forgotpasswordfragment,forgotpasswordfragment.getTag()).commit();
+                manager.beginTransaction().replace(R.id.framelayoutcoustumer,forgotpasswordfragment,forgotpasswordfragment.getTag()).commit();
             }
         });
         mAuth = FirebaseAuth.getInstance();
@@ -104,7 +104,7 @@ public class Loginfragmentcoustumer extends Fragment {
             public void onClick(View view) {
                 Signupfragmentcoustumer signupfragmentcoustumer=new Signupfragmentcoustumer();
                 FragmentManager manager=getFragmentManager();
-                manager.beginTransaction().replace(R.id.frameLayoutMAIN,signupfragmentcoustumer,signupfragmentcoustumer.getTag()).commit();
+                manager.beginTransaction().replace(R.id.framelayoutcoustumer,signupfragmentcoustumer,signupfragmentcoustumer.getTag()).commit();
             }
 
 

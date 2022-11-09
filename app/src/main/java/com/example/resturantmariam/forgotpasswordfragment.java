@@ -35,9 +35,9 @@ public class forgotpasswordfragment extends Fragment {
         String emaill, phone;
         etemail = getView().findViewById(R.id.Emailforgorpass);
 
-        email = getView().findViewById(R.id.imageemail);
+        email = getView().findViewById(R.id.emailimageforgotpass);
 
-        email.setImageResource(R.drawable.emailsend);
+        email.setImageResource(R.drawable.sendemail);
         ;
 
         emaill = etemail.getText().toString();

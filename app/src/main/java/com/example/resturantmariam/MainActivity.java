@@ -1,6 +1,7 @@
 package com.example.resturantmariam;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Telephony;
 import android.view.View;
@@ -46,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void coustumer(View view) {
-        FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayoutMAIN, new Loginfragmentcoustumer());
-        ft.commit();
+        Intent i=new Intent(this, frameLayoutMaincoustumer.class);
+        startActivity(i);
     }
 
 

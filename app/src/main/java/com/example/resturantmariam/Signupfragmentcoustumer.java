@@ -44,6 +44,12 @@ public class Signupfragmentcoustumer extends Fragment {
     }
     public void createUser(){
         try{
+            etpassword=getView().findViewById(R.id.passwordsignuocoustumer);
+            etconfirmpassword=getView().findViewById(R.id.confirmpasscoustumer);
+            etemail=getView().findViewById(R.id.emailsignuooustumer);
+            btnsignup=getView().findViewById(R.id.sigtupbt);
+            mAuth=FirebaseAuth.getInstance();
+
             if(!etemail.getText().toString().isEmpty()&&!etpassword.getText().toString().isEmpty()&&!etconfirmpassword.getText().toString().isEmpty()){
                 if(etpassword.getText().toString().equals(etconfirmpassword.getText().toString())){
                     mAuth.createUserWithEmailAndPassword(etemail.getText().toString(),etpassword.getText().toString())
@@ -117,7 +123,7 @@ public class Signupfragmentcoustumer extends Fragment {
     private  void instalize(){
 
         etpassword=getView().findViewById(R.id.passwordsignuocoustumer);
-        etconfirmpassword=getView().findViewById(R.id.confirmpasswordsignuocoustumer);
+        etconfirmpassword=getView().findViewById(R.id.confirmpasscoustumer);
         etemail=getView().findViewById(R.id.emailsignuooustumer);
         btnsignup=getView().findViewById(R.id.sigtupbt);
         mAuth=FirebaseAuth.getInstance();

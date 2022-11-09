@@ -5,31 +5,61 @@
     android:id="@+id/backroung"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pink4"
+    android:background="@color/ofwhite"
     android:backgroundTintMode="multiply"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/Coustomer"
-        android:layout_width="135dp"
-        android:layout_height="57dp"
-        android:backgroundTint="#D31C80"
+
+        android:layout_width="157dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="313dp"
+        android:layout_marginBottom="67dp"
+        android:backgroundTint="@color/dahabe"
         android:onClick="coustumer"
         android:text="Coustumer"
+        app:layout_constraintBottom_toTopOf="@+id/btnemployee"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="163dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/frameLayoutMAIN"
-        android:layout_width="319dp"
-        android:layout_height="308dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="388dp"
+    <Button
+        android:id="@+id/btnmanager"
+        android:onClick="maneger"
+        android:layout_width="174dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="@color/dahabe"
+        android:text="manager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/btnemployee" />
 
-    </FrameLayout>
+    <Button
+        android:id="@+id/btnemployee"
+        android:onClick="employee"
+        android:layout_width="179dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="75dp"
+        android:backgroundTint="@color/dahabe"
+        android:text="employee"
+        app:layout_constraintBottom_toTopOf="@+id/btnmanager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Coustomer" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="286dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/Coustomer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/project" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
