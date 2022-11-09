@@ -45,7 +45,7 @@ public class Signupfragmentcoustumer extends Fragment {
     public void createUser(){
         try{
             etpassword=getView().findViewById(R.id.passwordsignuocoustumer);
-            etconfirmpassword=getView().findViewById(R.id.confirmpasscoustumer);
+            etconfirmpassword=getView().findViewById(R.id.confirmpasscoustumersignup);
             etemail=getView().findViewById(R.id.emailsignuooustumer);
             btnsignup=getView().findViewById(R.id.sigtupbt);
             mAuth=FirebaseAuth.getInstance();
@@ -123,14 +123,14 @@ public class Signupfragmentcoustumer extends Fragment {
     private  void instalize(){
 
         etpassword=getView().findViewById(R.id.passwordsignuocoustumer);
-        etconfirmpassword=getView().findViewById(R.id.confirmpasscoustumer);
+        etconfirmpassword=getView().findViewById(R.id.confirmpasscoustumersignup);
         etemail=getView().findViewById(R.id.emailsignuooustumer);
-        btnsignup=getView().findViewById(R.id.sigtupbt);
+        btnsignup=getView().findViewById(R.id.btnsignup);
         mAuth=FirebaseAuth.getInstance();
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, username, phonenumber, password, confirmpassword;
+                String email,  password, confirmpassword;
                 email = etemail.getText().toString();
                 password = etpassword.getText().toString();
                 confirmpassword = etconfirmpassword.getText().toString();

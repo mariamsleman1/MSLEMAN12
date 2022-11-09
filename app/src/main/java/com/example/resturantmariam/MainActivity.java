@@ -41,9 +41,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void employee(View view) {
+        Intent i=new Intent(this, employeeframelayout.class);
+        startActivity(i);
     }
 
     public void maneger(View view) {
+        Intent i=new Intent(this, manager.class);
+        startActivity(i);
     }
 
     public void coustumer(View view) {

@@ -48,11 +48,9 @@ public class Loginfragmentcoustumer extends Fragment {
         // Required empty public constructor
     }
     public void initialize() {
-        etusername = getView().findViewById(R.id.emailadresslogincoustumer);
+        etusername = getView().findViewById(R.id.emaillogincoustumer);
         etpassword = getView().findViewById(R.id.password);
         etbtnlogin = getView().findViewById(R.id.loginbt);
-        /*etimageView = getView().findViewById(R.id.loginimage);
-        etimageView.setImageResource(R.drawable.loginrest);*/
         ettextView = getView().findViewById(R.id.forgot);
         ettextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +60,8 @@ public class Loginfragmentcoustumer extends Fragment {
                 manager.beginTransaction().replace(R.id.framelayoutcoustumer,forgotpasswordfragment,forgotpasswordfragment.getTag()).commit();
             }
         });
+
+
         mAuth = FirebaseAuth.getInstance();
 
         etbtnlogin.setOnClickListener(new View.OnClickListener() {
