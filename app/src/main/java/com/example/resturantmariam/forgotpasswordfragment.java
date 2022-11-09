@@ -1,5 +1,6 @@
 package com.example.resturantmariam;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -29,35 +31,47 @@ public class forgotpasswordfragment extends Fragment {
     private EditText etemail;
     private ImageButton email;
 
-    private void instalize(){
-        String emaill,phone;
-        etemail=getView().findViewById(R.id.Emailforgorpass);
+    private void instalize() {
+        String emaill, phone;
+        etemail = getView().findViewById(R.id.Emailforgorpass);
 
-        email=getView().findViewById(R.id.imageemail);
+        email = getView().findViewById(R.id.imageemail);
 
         email.setImageResource(R.drawable.emailsend);
-       ;
+        ;
 
         emaill = etemail.getText().toString();
 
 
-        if (emaill.trim().isEmpty() ) {
-            Toast.makeText(getContext(), "SOMTHING FAILED ! " +"", Toast.LENGTH_SHORT).show();
-            return;}
+        if (emaill.trim().isEmpty()) {
+            Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // if the user have acount //if he has no acount send toast and go to sign up
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //send the user password at email
-
+               /* Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"recipient@example.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
+                i.putExtra(Intent.EXTRA_TEXT, "body of email");
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }*/
 
             }
+
         });
+    }
+
 
         //go to the menu
 
-    }
+
 
     public forgotpasswordfragment() {
         // Required empty public constructor

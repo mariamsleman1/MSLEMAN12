@@ -3,6 +3,7 @@ package com.example.resturantmariam;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -12,6 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,18 +38,51 @@ public class Signupfragmentcoustumer extends Fragment {
     private EditText etemail;
     private EditText etconfirmpassword;
     private Button btnsignup;
+    private FirebaseAuth mAuth;
     public Signupfragmentcoustumer() {
         // Required empty public constructor
     }
+    public void createUser(){
+        try{
+            if(!etemail.getText().toString().isEmpty()&&!etpassword.getText().toString().isEmpty()&&!etconfirmpassword.getText().toString().isEmpty()){
+                if(etpassword.getText().toString().equals(etconfirmpassword.getText().toString())){
+                    mAuth.createUserWithEmailAndPassword(etemail.getText().toString(),etpassword.getText().toString())
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                  public void onSuccess(AuthResult authResult) {
+                   Toast.makeText(getContext(), "Account created.", Toast.LENGTH_SHORT).show();
+                     if(mAuth.getCurrentUser()!=null){
+                      mAuth.signOut();
+                       }
+                       }
+                   })
+              .addOnFailureListener(new OnFailureListener() {
+              @Override
+            public void onFailure(@NonNull Exception e) {
+           Toast.makeText(getContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+           });
+                }
+                else{
+                    Toast.makeText(getContext(), "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else{
+                Toast.makeText(getContext(), "Missing fields identified.", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+        }}
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Signupfragmentcoustumer.
-     */
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment Signupfragmentcoustumer.
+         */
     // TODO: Rename and change types and number of parameters
     public static Signupfragmentcoustumer newInstance(String param1, String param2) {
         Signupfragmentcoustumer fragment = new Signupfragmentcoustumer();
@@ -81,17 +120,14 @@ public class Signupfragmentcoustumer extends Fragment {
         etconfirmpassword=getView().findViewById(R.id.confirmpasswordsignuocoustumer);
         etemail=getView().findViewById(R.id.emailsignuooustumer);
         btnsignup=getView().findViewById(R.id.sigtupbt);
-
-
+        mAuth=FirebaseAuth.getInstance();
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email, username, phonenumber, password, confirmpassword;
                 email = etemail.getText().toString();
-
                 password = etpassword.getText().toString();
                 confirmpassword = etconfirmpassword.getText().toString();
-
                 if (email.trim().isEmpty()  ||  password.trim().isEmpty() || confirmpassword.trim().isEmpty()) {
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
 
@@ -102,32 +138,14 @@ public class Signupfragmentcoustumer extends Fragment {
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-
                 if (password.equals(confirmpassword)) {
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-
-
-
-
+                createUser();
 
             }
         });
-       /* btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //الانتقال الى فراغمينت اللوج ان
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.signup, new Loginfragmentcoustumer());
-                ft.commit();
-            }*/
-            //go to the menu
-
-
-
 
 
     }
@@ -138,9 +156,6 @@ public class Signupfragmentcoustumer extends Fragment {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
-
-
-
 
     public static boolean isValidPhoneNumber(CharSequence target) {
         if (target == null || target.length() != 10) {
