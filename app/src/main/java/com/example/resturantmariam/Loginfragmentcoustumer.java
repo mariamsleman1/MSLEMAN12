@@ -1,5 +1,6 @@
 package com.example.resturantmariam;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -84,12 +85,16 @@ public class Loginfragmentcoustumer extends Fragment {
                         @Override
                         public void onSuccess(AuthResult authResult) {
                             Toast.makeText(getContext(), "User signed in successfully.", Toast.LENGTH_SHORT).show();
-                        } }) .addOnFailureListener(new OnFailureListener() {
+                            Intent i=new Intent(getActivity(), menumealsActivity.class);
+                            startActivity(i);
+                        }
+                    }) .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
                         }   }  );
+
                 }
             }
         });

@@ -1,6 +1,9 @@
 package com.example.resturantmariam;
 
+enum Type {chinese, sushi, oriental};
+
 public class meals {
+    private Type type;
     private breakfast  mealbraekfast;
     private lunch meaklunch;
     private dinner mealdinner;
@@ -12,7 +15,9 @@ public class meals {
         this.meaklunch=meaklunch;
         this.mealdinner=mealdinner;
         this.mealdessert= mealdessert;
-        this.drink= drink;}
+        this.drink= drink;
+        this.type = Type.chinese;
+    }
     public breakfast  getmealbraekfast() {
         return this.mealbraekfast; }
     public lunch getmeaklunch() {
