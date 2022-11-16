@@ -116,10 +116,11 @@ public class Signupfragmentcoustumer extends Fragment {
     }
 
     @Override
-    public void startActivity(Intent intent) {
-        super.startActivity(intent);
+    public void onStart() {
+        super.onStart();
         instalize();
     }
+
     private  void instalize(){
 
         etpassword=getView().findViewById(R.id.passwordsignuocoustumer);
@@ -139,7 +140,7 @@ public class Signupfragmentcoustumer extends Fragment {
 
                     return;
                 }
-                if (!isValidEmail(email)) {
+               /* if (!isValidEmail(email)) {
 
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
                     return;
@@ -147,7 +148,7 @@ public class Signupfragmentcoustumer extends Fragment {
                 if (password.equals(confirmpassword)) {
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
                     return;
-                }
+                }*/
                 createUser();
 
             }

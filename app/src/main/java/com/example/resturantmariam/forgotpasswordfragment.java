@@ -114,5 +114,10 @@ public class forgotpasswordfragment extends Fragment {
         }
     }
 
+    @Override
+    public void onStart() {
 
+        super.onStart();
+        instalize();
+    }
 }
