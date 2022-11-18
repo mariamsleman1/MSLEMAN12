@@ -1,19 +1,20 @@
 package com.example.resturantmariam;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
+import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.firebase.auth.EmailAuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
  * create an instance of this fragment.
  */
 public class forgotpasswordfragment extends Fragment {
-
+    private EditText etemail;
+    private ImageButton email;
+    private FirebaseAuth mAuth;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,41 +33,35 @@ public class forgotpasswordfragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private EditText etemail;
-    private ImageButton email;
-    private FirebaseAuth mAuth;
+
 
     private void instalize() {
-        String emaill, phone;
-        etemail = getView().findViewById(R.id.Emailforgorpass);
 
-        email = getView().findViewById(R.id.btnimagerforgotpass);
-        emaill = etemail.getText().toString();
+        etemail = getView().findViewById(R.id.Emailforgorpass);
+        email = getView().findViewById(R.id.imageButtonforgot);
+       email.setImageResource(R.drawable.sendemail);
         mAuth = FirebaseAuth.getInstance();
 
         // if the user have acount //if he has no acount send toast and go to sign up
          email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String emaill = etemail.getText().toString();
                 if (emaill.trim().isEmpty()) {
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
                     return;}
-                if (!isValidEmail(etemail.getText().toString().trim())) {
-                    email.requestFocus();
-                    Toast.makeText(getContext(), "EMAIL NOT VALID " + "", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                mAuth.sendPasswordResetEmail(etemail.getText().toString());
+
+
+                mAuth.sendPasswordResetEmail(emaill);
+                Toast.makeText(getContext(), "EMAIL HAS SEND " + "", Toast.LENGTH_SHORT).show();
+                Loginfragmentcoustumer Loginfragmentcoustumer=new Loginfragmentcoustumer();
+                FragmentManager manager=getFragmentManager();
+                manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
             }
 
 
          });
-
-
     }
-
-
-        //go to the menu
 
 
 
@@ -106,17 +103,8 @@ public class forgotpasswordfragment extends Fragment {
         return inflater.inflate(R.layout.fragment_forgotpasswordfragment, container, false);
     }
 
-    public static boolean isValidEmail(CharSequence target) {
-        if (target == null) {
-            return false;
-        } else {
-            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
-        }
-    }
-
     @Override
     public void onStart() {
-
         super.onStart();
         instalize();
     }
