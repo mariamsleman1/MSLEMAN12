@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".breakfastmealsfragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ofwhite">
+
+        <Button
+            android:id="@+id/turkishbreakfastbutton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/dahabe"
+            android:text="turkish breakfast"
+            app:layout_constraintBottom_toTopOf="@+id/otherbreakfastmeals"
+            app:layout_constraintEnd_toEndOf="@+id/arabianbreakfastbutton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/otherbreakfastmeals"
+            app:layout_constraintTop_toBottomOf="@+id/arabianbreakfastbutton" />
+
+        <Button
+            android:id="@+id/arabianbreakfastbutton"
+            android:layout_width="231dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="237dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/dahabe"
+            android:text="arabianbreakfast"
+            app:layout_constraintBottom_toTopOf="@+id/turkishbreakfastbutton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/otherbreakfastmeals"
+            android:layout_width="223dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="@color/dahabe"
+            android:text="other breakfast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/turkishbreakfastbutton" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="349dp"
+            android:layout_height="159dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginBottom="72dp"
+            android:src="@drawable/project"
+            app:layout_constraintBottom_toTopOf="@+id/arabianbreakfastbutton"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

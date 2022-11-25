@@ -1,44 +1,63 @@
 package com.example.resturantmariam;
 
-enum Type {chinese, sushi, oriental};
+import java.util.ArrayList;
 
 public class meals {
-    private Type type;
-    private breakfast  mealbraekfast;
-    private lunch meaklunch;
-    private dinner mealdinner;
-    private dessert mealdessert;
-    private drinks drink;
-    public meals(breakfast   mealbraekfast, lunch meaklunch, dinner mealdinner, dessert mealdessert, drinks drink)
-    {
-        this.mealbraekfast=mealbraekfast;
-        this.meaklunch=meaklunch;
-        this.mealdinner=mealdinner;
-        this.mealdessert= mealdessert;
-        this.drink= drink;
-        this.type = Type.chinese;
+    private ArrayList<breakfast>  mealbraekfast;
+    private ArrayList< lunch >meaklunch;
+    private ArrayList< dinner> mealdinner;
+    private ArrayList<dessert> mealdessert;
+    private ArrayList<drinks> drink;
+
+    public ArrayList<breakfast> getMealbraekfast() {
+        return mealbraekfast;
     }
-    public breakfast  getmealbraekfast() {
-        return this.mealbraekfast; }
-    public lunch getmeaklunch() {
-        return this.meaklunch; }
-    public dinner getmealdinner() {
-        return this.mealdinner; }
-    public dessert getmealdessert() {
-        return this.mealdessert; }
-    public drinks getdrink() {
-        return this.drink; }
-    public void setmealbraekfast (breakfast mealbraekfast) {
-        this.mealbraekfast = mealbraekfast;}
-    public void setmeaklunch(lunch meaklunch) {
-        this.meaklunch = meaklunch;}
-    public void setmealdinner(dinner mealdinner) {
-        this.mealdinner= mealdinner;}
-    public void setmealdessert(dessert mealdessert) {
-        this.mealdessert = mealdessert;}
-    public void setdrink(drinks drink) {
-        this.drink=drink;}
-    public String toString() {
-        return (" meal breakfast" + mealbraekfast +"meal lunch"+ meaklunch+"mealdinner" + mealdinner + "meal dessert" +
-                mealdessert+"drinks "+ drink);}
+
+    public ArrayList<lunch> getMeaklunch() {
+        return meaklunch;
+    }
+
+    public ArrayList<dinner> getMealdinner() {
+        return mealdinner;
+    }
+
+    public ArrayList<dessert> getMealdessert() {
+        return mealdessert;
+    }
+
+    public ArrayList<drinks> getDrink() {
+        return drink;
+    }
+
+    public meals(ArrayList<breakfast> mealbraekfast, ArrayList<lunch> meaklunch,
+                 ArrayList<dinner> mealdinner, ArrayList<dessert> mealdessert, ArrayList<drinks> drink) {
+        this.mealbraekfast = mealbraekfast;
+        this.meaklunch = meaklunch;
+        this.mealdinner = mealdinner;
+        this.mealdessert = mealdessert;
+        this.drink = drink;
+    }
+
+    public void setMealbraekfast(ArrayList<breakfast> mealbraekfast) {
+        this.mealbraekfast = mealbraekfast;
+    }
+
+    public void setMeaklunch(ArrayList<lunch> meaklunch) {
+        this.meaklunch = meaklunch;
+    }
+
+    public void setMealdinner(ArrayList<dinner> mealdinner) {
+        this.mealdinner = mealdinner;
+    }
+
+    public void setMealdessert(ArrayList<dessert> mealdessert) {
+        this.mealdessert = mealdessert;
+    }
+
+    public void setDrink(ArrayList<drinks> drink) {
+        this.drink = drink;
+    }
+
+
 }
+
