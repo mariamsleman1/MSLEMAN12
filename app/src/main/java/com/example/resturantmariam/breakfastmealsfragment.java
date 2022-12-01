@@ -28,10 +28,10 @@ public class breakfastmealsfragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-private Button etbreakfastarabianbutton;
+    private Button etbreakfastarabianbutton;
     private Button etbreakfastturkishbutton;
     private Button etbreakfastother;
-    private Type type;
+
 
 
     public breakfastmealsfragment() {
@@ -75,42 +75,36 @@ private Button etbreakfastarabianbutton;
 
 public void breakfastfrag()
 {
-    breakfast breakfast=new breakfast(order());
-
-
-}
-
-    private Type order() {
-        etbreakfastarabianbutton=getView().findViewById(R.id.arabianbreakfastbutton);
+    etbreakfastarabianbutton=getView().findViewById(R.id.arabianbreakfastbutton);
         etbreakfastturkishbutton=getView().findViewById(R.id.turkishbreakfastbutton);
         etbreakfastother=getView().findViewById(R.id.otherbreakfastmeals);
+
 
         etbreakfastarabianbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                type= Type.arabianbreakfast;
 
-                breakfastmealsfragment breakfastmealsfragment=new breakfastmealsfragment();
+                arabianbreakfastfragment arabianbreakfastfragment=new arabianbreakfastfragment();
                 FragmentManager manager=getFragmentManager();
-             // manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
+                manager.beginTransaction().replace(R.id.breakfastmenuframelayout,arabianbreakfastfragment,arabianbreakfastfragment.getTag()).commit();
 
                     }
         });
+
+
        etbreakfastturkishbutton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-
-     type= Type.turkishbreakfast;
-
         breakfastmealsfragment breakfastmealsfragment=new breakfastmealsfragment();
         FragmentManager manager=getFragmentManager();
         // manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
     }
 });
+
+
        etbreakfastother.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               type= Type.othermaelsofbreakfast;
 
                breakfastmealsfragment breakfastmealsfragment=new breakfastmealsfragment();
                FragmentManager manager=getFragmentManager();
@@ -118,13 +112,12 @@ public void breakfastfrag()
 
            }
        });
-      return type;
     }
 
 
     @Override
     public void onStart() {
         super.onStart();
-
+        breakfastfrag();
     }
 }

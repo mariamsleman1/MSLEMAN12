@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,21 +18,20 @@ public class menumealsActivity extends AppCompatActivity {
     }
 
     public void breakfastbtn(View view) {
-        FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
-        //ft.replace(R.id.menuframelayout,new employeesignin());
-        ft.commit();
+        Intent i=new Intent(this, breakfasrfamelayoutactivity.class);
+        startActivity(i);
     }
 
     public void lunchbtn(View view) {
-        FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+        /*FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         //ft.replace(R.id.menuframelayout,new employeesignin());
-        ft.commit();
+        ft.commit();*/
     }
 
     public void dinnerbtn(View view) {
-        FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+       /* FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         //ft.replace(R.id.menuframelayout,new employeesignin());
-        ft.commit();
+        ft.commit();*/
     }
 
     public void drinkbtn(View view) {
