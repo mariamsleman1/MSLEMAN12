@@ -95,9 +95,9 @@ public void breakfastfrag()
        etbreakfastturkishbutton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        breakfastmealsfragment breakfastmealsfragment=new breakfastmealsfragment();
+       /* breakfastmealsfragment breakfastmealsfragment=new breakfastmealsfragment();
         FragmentManager manager=getFragmentManager();
-        // manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
+        // manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();*/
     }
 });
 
@@ -105,10 +105,10 @@ public void breakfastfrag()
        etbreakfastother.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-
+/*
                breakfastmealsfragment breakfastmealsfragment=new breakfastmealsfragment();
                FragmentManager manager=getFragmentManager();
-               // manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
+               // manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();*/
 
            }
        });
