@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link arabianbreakfastfragment#newInstance} factory method to
@@ -36,39 +38,51 @@ public class arabianbreakfastfragment extends Fragment {
     private ImageButton manakesh;
     private ImageButton labanehbrakfast;
     private ImageButton shkshoukabreakfast;
+    private ArrayList<ImageButton> mealsofbreakfast;
 
 public void connect(){
     breakfastarabian1=getView().findViewById(R.id.arabianbreakfast);
-breakfastarabian1.setImageResource(R.drawable.firstarabianbreakfast);
     breakfastarabian2=getView().findViewById(R.id.arabianbreakfast2button);
-breakfastarabian2.setImageResource(R.drawable.secondarabianbreakfast);
     breakfastarabian3=getView().findViewById(R.id.arabianbreakfast3button);
-breakfastarabian3.setImageResource(R.drawable.thirdarabianbreakfast);
     breakfastarabian4=getView().findViewById(R.id.arabianbreakfast4button);
-breakfastarabian4.setImageResource(R.drawable.fourtharabianbreakfast);
     breakfastarabian5=getView().findViewById(R.id.arabianbreakfast5button);
-breakfastarabian5.setImageResource(R.drawable.fiftharabianbreakfast);
     breakfastarabian6=getView().findViewById(R.id.arabianbreakfast6button);
-breakfastarabian6.setImageResource(R.drawable.sixtharabianbreakfast);
     foolbreakfast=getView().findViewById(R.id.foollbreakfastbutton);
-foolbreakfast.setImageResource(R.drawable.foolbreakfast);
     hummosbreakfast=getView().findViewById(R.id.hummosbreakfastbtn);
-hummosbreakfast.setImageResource(R.drawable.hummusbreakfast);
     kakealqudsbreakfast=getView().findViewById(R.id.kaakalkudbreakfastsbtn);
-kakealqudsbreakfast.setImageResource(R.drawable.kaakalqoudsbreakfast);
     manakesh=getView().findViewById(R.id.mnakeshbreakfastbtn);
-kakealqudsbreakfast.setImageResource(R.drawable.manakeeshbreakfast);
     labanehbrakfast=getView().findViewById(R.id.labanehbreakfastbutoon);
-labanehbrakfast.setImageResource(R.drawable.labnehbreakfast);
     shkshoukabreakfast=getView().findViewById(R.id.shaksokabreakfastbtn);
-    shkshoukabreakfast.setImageResource(R.drawable.shakshokabreakfast);
 
 }
+public void constuctur(){
+    //make array list
+    mealsofbreakfast.add(breakfastarabian1);
+    mealsofbreakfast.add(breakfastarabian2);
+    mealsofbreakfast.add(breakfastarabian3);
+    mealsofbreakfast.add(breakfastarabian4);
+    mealsofbreakfast.add(breakfastarabian5);
+    mealsofbreakfast.add(breakfastarabian6);
+    mealsofbreakfast.add( foolbreakfast);
+    mealsofbreakfast.add( hummosbreakfast);
+    mealsofbreakfast.add( kakealqudsbreakfast);
+    mealsofbreakfast.add( manakesh);
+    mealsofbreakfast.add( labanehbrakfast);
+    mealsofbreakfast.add( shkshoukabreakfast);
+    breakfast meal1=new breakfast(mealsofbreakfast);
+}
+    private void activity() {
+    //يطلع تفاصيل الطلب مع الضغط عليه
+    }
 
 public void startactivity(){
     connect();
+    constuctur();
+    activity();
     //اظهار مربع لاخذ الطلبات و حفظ الطلبات
+
 }
+
 
 
 

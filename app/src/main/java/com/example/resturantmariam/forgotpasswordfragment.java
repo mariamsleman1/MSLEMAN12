@@ -2,6 +2,8 @@ package com.example.resturantmariam;
 
 import android.content.Context;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
@@ -11,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,17 +50,23 @@ public class forgotpasswordfragment extends Fragment {
          email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String emaill = etemail.getText().toString();
                 if (emaill.trim().isEmpty()) {
                     Toast.makeText(getContext(), "SOMTHING FAILED ! " + "", Toast.LENGTH_SHORT).show();
                     return;}
 
 
-                mAuth.sendPasswordResetEmail(emaill);
-                Toast.makeText(getContext(), "EMAIL HAS SEND " + "", Toast.LENGTH_SHORT).show();
-                Loginfragmentcoustumer Loginfragmentcoustumer=new Loginfragmentcoustumer();
-                FragmentManager manager=getFragmentManager();
-                manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
+                mAuth.sendPasswordResetEmail(emaill).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(getContext(), "Email Has send" + "", Toast.LENGTH_SHORT).show();
+                        Loginfragmentcoustumer Loginfragmentcoustumer=new Loginfragmentcoustumer();
+                        FragmentManager manager=getFragmentManager();
+                        manager.beginTransaction().replace(R.id.framelayoutcoustumer,Loginfragmentcoustumer,Loginfragmentcoustumer.getTag()).commit();
+                    }
+                });
+
             }
 
 

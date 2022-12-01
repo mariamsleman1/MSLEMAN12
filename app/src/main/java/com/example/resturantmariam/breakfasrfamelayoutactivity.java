@@ -13,7 +13,7 @@ public class breakfasrfamelayoutactivity extends AppCompatActivity {
         setContentView(R.layout.activity_breakfasrfamelayoutactivity);
 
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.breakfastmenuframelayout,new breakfastmealsfragment());
+        ft.replace(R.id.breakfastmenuframelayout,new arabianbreakfastfragment());
         ft.commit();
 
     }
