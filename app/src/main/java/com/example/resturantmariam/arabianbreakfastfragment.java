@@ -41,18 +41,18 @@ public class arabianbreakfastfragment extends Fragment {
     private ArrayList<ImageButton> mealsofbreakfast;
 
 public void connect(){
-    breakfastarabian1=getView().findViewById(R.id.arabianbreakfast);
-    breakfastarabian2=getView().findViewById(R.id.arabianbreakfast2button);
-    breakfastarabian3=getView().findViewById(R.id.arabianbreakfast3button);
-    breakfastarabian4=getView().findViewById(R.id.arabianbreakfast4button);
-    breakfastarabian5=getView().findViewById(R.id.arabianbreakfast5button);
-    breakfastarabian6=getView().findViewById(R.id.arabianbreakfast6button);
-    foolbreakfast=getView().findViewById(R.id.foollbreakfastbutton);
-    hummosbreakfast=getView().findViewById(R.id.hummosbreakfastbtn);
+    breakfastarabian1=getView().findViewById(R.id.breakfastmeal1);
+    breakfastarabian2=getView().findViewById(R.id.breakfastmeal2);
+    breakfastarabian3=getView().findViewById(R.id.breakfastmeal3);
+    breakfastarabian4=getView().findViewById(R.id.breakfastmeal4);
+    breakfastarabian5=getView().findViewById(R.id.breakfastmeal5);
+    breakfastarabian6=getView().findViewById(R.id.breakfastmeal6);
+    foolbreakfast=getView().findViewById(R.id.foolbreakfast);
+    hummosbreakfast=getView().findViewById(R.id.hummosbreakfast);
     kakealqudsbreakfast=getView().findViewById(R.id.kaakalkudbreakfastsbtn);
-    manakesh=getView().findViewById(R.id.mnakeshbreakfastbtn);
-    labanehbrakfast=getView().findViewById(R.id.labanehbreakfastbutoon);
-    shkshoukabreakfast=getView().findViewById(R.id.shaksokabreakfastbtn);
+    manakesh=getView().findViewById(R.id.mankeeshbreakfast);
+    labanehbrakfast=getView().findViewById(R.id.labnehbreakfast);
+    shkshoukabreakfast=getView().findViewById(R.id.shakshokabreakfast);
 
 }
 public void constuctur(){

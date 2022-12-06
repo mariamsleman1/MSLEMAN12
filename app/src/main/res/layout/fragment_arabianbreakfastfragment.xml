@@ -12,103 +12,95 @@
         android:layout_height="match_parent"
         android:background="@color/ofwhite">
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="392dp"
-            android:layout_height="197dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/project"
-            app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ScrollView
-            android:id="@+id/scrollView3"
-            android:layout_width="448dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/shaksokabreakfastbtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="236dp"
-                    tools:src="@drawable/shakshokabreakfast" />
+                <ImageView
+                    android:id="@+id/breakfastmeal1"
+                    android:layout_width="match_parent"
+                    android:layout_height="213dp"
+                    android:src="@drawable/fiftharabianbreakfast" />
+
+                <ImageView
+                    android:id="@+id/breakfastmeal2"
+                    android:layout_width="388dp"
+                    android:layout_height="174dp"
+                    android:src="@drawable/firstarabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/kaakalkudsbreakfastbtn"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/kaakalqoudsbreakfast" />
+                    android:id="@+id/breakfastmeal3"
+                    android:layout_width="425dp"
+                    android:layout_height="216dp"
+                    android:src="@drawable/secondarabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/hummosbreakfastbtn"
+                    android:id="@+id/breakfastmeal4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:src="@drawable/hummusbreakfast" />
+                    android:src="@drawable/sixtharabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/mnakeshbreakfastbtn"
+                    android:id="@+id/breakfastmeal5"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/manakeeshbreakfast" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/thirdarabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/labanehbreakfastbutoon"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/labnehbreakfast" />
-
-                <ImageButton
-                    android:id="@+id/foollbreakfastbutton"
+                    android:id="@+id/breakfastmeal6"
                     android:layout_width="match_parent"
-                    android:layout_height="418dp"
-                    tools:src="@drawable/foolbreakfast" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/fourtharabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/arabianbreakfast6button"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/app_name"
-                    tools:src="@drawable/firstarabianbreakfast" />
+                    android:id="@+id/flafelbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/flafelbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/arabianbreakfast5button"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/secondarabianbreakfast" />
+                    android:id="@+id/hummosbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/hummusbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/arabianbreakfast4button"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/thirdarabianbreakfast" />
+                    android:id="@+id/kaakaleedbreakfast"
+                    android:layout_width="385dp"
+                    android:layout_height="363dp"
+                    android:src="@drawable/kaakalqoudsbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/arabianbreakfast3button"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/fourtharabianbreakfast" />
+                    android:id="@+id/shakshokabreakfast"
+                    android:layout_width="380dp"
+                    android:layout_height="349dp"
+                    android:src="@drawable/shaksoka" />
 
                 <ImageButton
-                    android:id="@+id/arabianbreakfast2button"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/fiftharabianbreakfast" />
+                    android:id="@+id/labnehbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="238dp"
+                    android:src="@drawable/labnehbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/arabianbreakfast"
-                    android:layout_width="400dp"
-                    android:layout_height="200dp"
-                    tools:src="@drawable/sixtharabianbreakfast" />
+                    android:id="@+id/mankeeshbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="308dp"
+                    android:src="@drawable/manakeeshbreakfast" />
+
+                <ImageButton
+                    android:id="@+id/foolbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="570dp"
+                    android:src="@drawable/foolbreakfast" />
+
             </LinearLayout>
         </ScrollView>
 
