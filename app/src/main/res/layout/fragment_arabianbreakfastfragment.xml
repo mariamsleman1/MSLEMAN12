@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/kaakalkudbreakfastsbtn"
+    android:id="@+id/breakfastmeal5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".arabianbreakfastfragment">
@@ -12,52 +12,73 @@
         android:layout_height="match_parent"
         android:background="@color/ofwhite">
 
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="392dp"
+            android:layout_height="197dp"
+            android:src="@drawable/project"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.842"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="141dp"
-            tools:layout_editor_absoluteY="16dp">
+            android:layout_width="376dp"
+            android:layout_height="502dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.542"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView9"
+            app:layout_constraintVertical_bias="0.93">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical" >
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/breakfastmeal1"
                     android:layout_width="match_parent"
-                    android:layout_height="213dp"
-                    android:src="@drawable/fiftharabianbreakfast" />
-
-                <ImageView
-                    android:id="@+id/breakfastmeal2"
-                    android:layout_width="388dp"
-                    android:layout_height="174dp"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/firstarabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/breakfastmeal3"
-                    android:layout_width="425dp"
-                    android:layout_height="216dp"
+                    android:id="@+id/breakfastmeal2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/secondarabianbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/breakfastmeal4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sixtharabianbreakfast" />
-
-                <ImageButton
-                    android:id="@+id/breakfastmeal5"
+                    android:id="@+id/breakfastmeal3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/thirdarabianbreakfast" />
 
                 <ImageButton
+                    android:id="@+id/breakfastmeal4"
+                    android:layout_width="match_parent"
+                    android:layout_height="299dp"
+                    android:src="@drawable/fourtharabianbreakfast" />
+
+                <ImageButton
                     android:id="@+id/breakfastmeal6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/fourtharabianbreakfast" />
+                    android:src="@drawable/sixtharabianbreakfast" />
+
+                <ImageButton
+                    android:id="@+id/shakshkabreakfast"
+                    android:layout_width="363dp"
+                    android:layout_height="410dp"
+                    android:src="@drawable/shaksoka" />
+
+                <ImageButton
+                    android:id="@+id/foolbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="364dp"
+                    android:src="@drawable/foolbreakfast" />
 
                 <ImageButton
                     android:id="@+id/flafelbreakfast"
@@ -72,34 +93,22 @@
                     android:src="@drawable/hummusbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/kaakaleedbreakfast"
-                    android:layout_width="385dp"
-                    android:layout_height="363dp"
+                    android:id="@+id/kaakalqudsbreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="288dp"
                     android:src="@drawable/kaakalqoudsbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/shakshokabreakfast"
-                    android:layout_width="380dp"
-                    android:layout_height="349dp"
-                    android:src="@drawable/shaksoka" />
-
-                <ImageButton
-                    android:id="@+id/labnehbreakfast"
+                    android:id="@+id/labanehbreakfast"
                     android:layout_width="match_parent"
-                    android:layout_height="238dp"
+                    android:layout_height="321dp"
                     android:src="@drawable/labnehbreakfast" />
 
                 <ImageButton
-                    android:id="@+id/mankeeshbreakfast"
+                    android:id="@+id/manakeshbreakfast"
                     android:layout_width="match_parent"
-                    android:layout_height="308dp"
+                    android:layout_height="304dp"
                     android:src="@drawable/manakeeshbreakfast" />
-
-                <ImageButton
-                    android:id="@+id/foolbreakfast"
-                    android:layout_width="match_parent"
-                    android:layout_height="570dp"
-                    android:src="@drawable/foolbreakfast" />
 
             </LinearLayout>
         </ScrollView>

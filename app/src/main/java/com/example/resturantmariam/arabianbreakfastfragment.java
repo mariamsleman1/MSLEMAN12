@@ -1,15 +1,25 @@
 package com.example.resturantmariam;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +50,7 @@ public class arabianbreakfastfragment extends Fragment {
     private ImageButton shkshoukabreakfast;
     private ArrayList<ImageButton> mealsofbreakfast;
 
+
 public void connect(){
     breakfastarabian1=getView().findViewById(R.id.breakfastmeal1);
     breakfastarabian2=getView().findViewById(R.id.breakfastmeal2);
@@ -49,10 +60,10 @@ public void connect(){
     breakfastarabian6=getView().findViewById(R.id.breakfastmeal6);
     foolbreakfast=getView().findViewById(R.id.foolbreakfast);
     hummosbreakfast=getView().findViewById(R.id.hummosbreakfast);
-    kakealqudsbreakfast=getView().findViewById(R.id.kaakalkudbreakfastsbtn);
-    manakesh=getView().findViewById(R.id.mankeeshbreakfast);
-    labanehbrakfast=getView().findViewById(R.id.labnehbreakfast);
-    shkshoukabreakfast=getView().findViewById(R.id.shakshokabreakfast);
+    kakealqudsbreakfast=getView().findViewById(R.id.kaakalqudsbreakfast);
+    manakesh=getView().findViewById(R.id.manakeshbreakfast);
+    labanehbrakfast=getView().findViewById(R.id.labanehbreakfast);
+    shkshoukabreakfast=getView().findViewById(R.id.shakshkabreakfast);
 
 }
 public void constuctur(){
@@ -69,7 +80,7 @@ public void constuctur(){
     mealsofbreakfast.add( manakesh);
     mealsofbreakfast.add( labanehbrakfast);
     mealsofbreakfast.add( shkshoukabreakfast);
-    breakfast meal1=new breakfast(mealsofbreakfast);
+
 }
     private void activity() {
     //يطلع تفاصيل الطلب مع الضغط عليه
